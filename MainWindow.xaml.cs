@@ -16,10 +16,10 @@ namespace Pathway;
 /// </summary>
 public partial class MainWindow : Window
 {
-    public MainWindow()
-    {
-        InitializeComponent();
+	public MainWindow()
+	{
+		InitializeComponent();
 
-        MainFrame.Navigate(new HomePage());
+		MainFrame.Navigate(new HomePage());
 	}
 }

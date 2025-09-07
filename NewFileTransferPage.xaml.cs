@@ -19,6 +19,7 @@ namespace Pathway
 	public partial class NewFileTransferPage : Page
 	{
 		public event Action<FileTransferData, Page> FileTransfersAdded;
+
 		public NewFileTransferPage()
 		{
 			InitializeComponent();

@@ -25,9 +25,9 @@
 			<TextBlock Text="Pathway" FontSize="36" HorizontalAlignment="Center" FontFamily="Roboto"/>
 
 			<Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
-			
+
 		</StackPanel>
-		
+
 	</Grid>
 
 </Window>
