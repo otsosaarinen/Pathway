@@ -15,13 +15,13 @@
 			<TextBlock Text="New File Transfer Setup" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 			<Label Content="Source File"/>
-			<TextBox x:Name="SourceFileTextBox" Height="35" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+			<TextBox x:Name="SourceFileTextBox" Height="35" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
 
 			<Label Content="Source Folder"/>
-			<TextBox x:Name="SourceFolderTextBox" Height="35" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+			<TextBox x:Name="SourceFolderTextBox" Height="35" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
 
 			<Label Content="Destination Folder"/>
-			<TextBox x:Name="DestinationFolderTextBox" Height="35" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+			<TextBox x:Name="DestinationFolderTextBox" Height="35" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
 
 			<Button Content="Add filetransfer" Click="AddFileTransfer_Click"
 			Width="200" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
