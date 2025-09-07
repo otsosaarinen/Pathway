@@ -49,7 +49,7 @@ namespace Pathway
 
 		public override string ToString()
 		{
-			return $"{SourceFile} → {DestinationFolder}";
+			return $"Moving {SourceFile} from {SourceFolder} to {DestinationFolder}";
 		}
 	}
 }
