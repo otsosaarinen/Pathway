@@ -16,32 +16,39 @@ using System.Windows.Shapes;
 
 namespace Pathway
 {
-	/// <summary>
-	/// Interaction logic for NewFileTransferPage.xaml
-	/// </summary>
 	public partial class NewFileTransferPage : Page
 	{
-
-		public string SourceFile { get; set; }
-		public string SourceFolder { get; set; }
-		public string DestinationFolder { get; set; }
-
+		public event Action<FileTransferData, Page> FileTransfersAdded;
 		public NewFileTransferPage()
 		{
 			InitializeComponent();
 		}
 		private void BackToHome_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
-			NavigationService.Navigate(new HomePage());
+			NavigationService.GoBack();
 		}
 
 		private void AddFileTransfer_Click(object sender, RoutedEventArgs e)
 		{
-			SourceFile = SourceFileTextBox.Text;
-			SourceFolder = SourceFolderTextBox.Text;
-			DestinationFolder = DestinationFolderTextBox.Text;
+			var data = new FileTransferData
+			{
+				SourceFile = SourceFileTextBox.Text,
+				SourceFolder = SourceFolderTextBox.Text,
+				DestinationFolder = DestinationFolderTextBox.Text
+			};
 
-			NavigationService.Navigate(new HomePage());
+			FileTransfersAdded?.Invoke(data, this);
+		}
+	}
+	public class FileTransferData
+	{
+		public string SourceFile { get; set; }
+		public string SourceFolder { get; set; }
+		public string DestinationFolder { get; set; }
+
+		public override string ToString()
+		{
+			return $"{SourceFile} → {DestinationFolder}";
 		}
 	}
 }

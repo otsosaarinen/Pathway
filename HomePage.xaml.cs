@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,18 +16,27 @@ using System.Windows.Shapes;
 
 namespace Pathway
 {
-	/// <summary>
-	/// Interaction logic for HomePage.xaml
-	/// </summary>
 	public partial class HomePage : Page
 	{
+		public ObservableCollection<FileTransferData> Transfers { get; set; } = new ObservableCollection<FileTransferData>();
+
 		public HomePage()
 		{
 			InitializeComponent();
+			TransfersListBox.ItemsSource = Transfers;
 		}
 		private void NewFileTransfer_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
-			NavigationService.Navigate(new NewFileTransferPage());
+			var newPage = new NewFileTransferPage();
+
+			newPage.FileTransfersAdded += (data, page) =>
+			{
+				Transfers.Add(data);
+				if (page.NavigationService != null)
+					page.NavigationService.GoBack();
+			};
+
+			NavigationService.Navigate(newPage);
 		}
 	}
 
