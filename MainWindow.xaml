@@ -14,14 +14,14 @@
 		</Grid.RowDefinitions>
 
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="4*" />
+			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
 
 		<StackPanel HorizontalAlignment="Center" Margin="0,10,0,0">
 
 			<TextBlock Text="Pathway" FontSize="36" HorizontalAlignment="Center" FontFamily="Roboto"/>
 
-			<Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+			<Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="0,25,0,0"/>
 
 		</StackPanel>
 
