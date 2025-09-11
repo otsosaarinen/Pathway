@@ -43,9 +43,9 @@ namespace Pathway
 	}
 	public class FileTransferData
 	{
-		public string SourceFile { get; set; }
-		public string SourceFolder { get; set; }
-		public string DestinationFolder { get; set; }
+		public required string SourceFile { get; set; }
+		public required string SourceFolder { get; set; }
+		public required string DestinationFolder { get; set; }
 
 		public override string ToString()
 		{
