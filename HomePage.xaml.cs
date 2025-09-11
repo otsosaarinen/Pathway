@@ -18,11 +18,12 @@ namespace Pathway
 {
 	public partial class HomePage : Page
 	{
-		public ObservableCollection<FileTransferData> Transfers { get; set; } = new ObservableCollection<FileTransferData>();
+		public ObservableCollection<FileTransferData> Transfers { get; set; } = [];
 
 		public HomePage()
 		{
 			InitializeComponent();
+
 			TransfersListBox.ItemsSource = Transfers;
 		}
 		private void NewFileTransfer_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -32,8 +33,7 @@ namespace Pathway
 			newPage.FileTransfersAdded += (data, page) =>
 			{
 				Transfers.Add(data);
-				if (page.NavigationService != null)
-					page.NavigationService.GoBack();
+				page.NavigationService?.GoBack();
 			};
 
 			NavigationService.Navigate(newPage);
